@@ -1,0 +1,25 @@
+<template>
+  <div class="slds-m-around_xx-large"
+   style="font-size: larger">  Currency converter 
+     <form onsubmit={submitHandler}>
+       <lightning-input type="number" name="amount" label="Amount" 
+                 required  
+                onchange={handleChange}>
+        </lightning-input>
+        <div class="slds-grid slds-gutters baseLine slds-var-m-vertical_x-large">     
+          <lightning-combobox  name="countryFrom"
+                label="From" value={countryFrom} 
+               options={countryList} onchange={handleChange} >
+          </lightning-combobox>      
+          <lightning-combobox  name="countryTo"
+          label="To" value={countryTo} 
+           options={countryList} onchange={handleChange} >
+        </lightning-combobox></div>
+        <div class="slds-text-align_center" style="font-size: larger">
+        <div>{amount}  {countryFrom} = {output} {countryTo}</div>
+        </div>
+        <button type="submit"  class="slds-m-around_large" onsubmit={submitHandler}>
+        Convert</button>
+    </form>
+  </div>
+</template>
